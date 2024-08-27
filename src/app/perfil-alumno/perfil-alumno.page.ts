@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil-alumno.page.scss'],
 })
 export class PerfilAlumnoPage implements OnInit {
+  isAlertOpen = false;
+  alertButtons = ['Volver'];
+
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
 
   constructor() { }
 
