@@ -1,0 +1,25 @@
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+ion-item {
+  width: 80%; /* Puedes ajustar este valor según tus necesidades */
+  max-width: 400px;
+  margin-bottom: 15px;
+}
+
+ion-input {
+  width: 100%;
+}
+
+
+
+ion-button {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 400px;
+}

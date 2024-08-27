@@ -6,10 +6,14 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  user = {
+    usuario: "",
+    password: ""
+  };
 
   constructor(private router: Router) { }
   navegar(){
-    this.router.navigate(['/home']);
+    this.router.navigate(['/perfil-docente']);
   }
   ngOnInit() {
   }
