@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import {Router, NavigationExtras,ActivatedRoute} from '@angular/router';
+import { FormControl,FormGroup,Validators } from '@angular/forms';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +8,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  usuario ="";
 
+  constructor(private activeroute: ActivatedRoute, private router: Router) {
+
+    this.activeroute.queryParams.subscribe(params => {
+  
+     
+  
+      this.usuario= this.router.getCurrentNavigation()?.extras.state?.['user'];
+  
+      console.log(this.router.getCurrentNavigation()?.extras.state?.['pass']);
+  
+     
+  
+    });
+  
+   }
 }

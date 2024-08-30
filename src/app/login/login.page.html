@@ -15,15 +15,33 @@
       <img id="user" src="/assets/user.png" >
     </ion-item>
 
-    <ion-item>
-      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    <form [formGroup]="usuario">
 
-    </ion-item>
-
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="user.usuario"></ion-input>
-
-    </ion-item>
+      <ion-item>
+    
+       <ion-input label="User" labelPlacement="floating" placeholder="User" formControlName="user"></ion-input>
+    
+      </ion-item>
+    
+     
+    
+      <ion-item>
+    
+       <ion-input label="Pass" labelPlacement="floating" placeholder="Pass" formControlName="pass"></ion-input>
+    
+      </ion-item>
+    
+     
+    
+      <!-- <ion-button expand="block" color="success" [disabled]="!usuario.valid" [routerLink]="['/homaalumno']" fill="outline">Ingresar</ion-button> -->
+    
+      <ion-button expand="block" color="success" (click)="navegarExtras()" fill="outline">Navigate Extras</ion-button>
+    
+      <!-- <ion-button expand="block" color="success" [routerLink]="['/home']" fill="outline">Nav RouiterLink</ion-button> -->
+    
+    
+    
+     </form>
  <ion-button [routerLink]="['/perfil-alumno']">
   Perfil Alumno
  </ion-button>

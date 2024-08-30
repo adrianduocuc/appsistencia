@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, NavigationExtras} from '@angular/router';
+import { FormControl,FormGroup,Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -11,11 +12,35 @@ export class LoginPage implements OnInit {
     password: ""
   };
 
+  
   constructor(private router: Router) { }
+  
+  usuario = new FormGroup({
+
+    user: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(20)]),
+  
+    pass: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(20)]),
+  
+   });
+
+   ngOnInit() {
+  }
+
+
   navegar(){
-    this.router.navigate(['/perfil-docente']);
+    this.router.navigate(['/perfil-docente']); 
   }
-  ngOnInit() {
-  }
+  navegarExtras(){
+    let setData: NavigationExtras = {
+      state: {
+        id: this.usuario.value.user,
+        user: this.usuario.value.pass
+      }
+      };
+
+      this.router.navigate(['/home'],setData);
+    }
+
+
 
 }
