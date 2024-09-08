@@ -11,8 +11,8 @@
     </ion-toolbar>
   </ion-header>
 
-    <ion-item>
-      <img id="user" src="/assets/user.png" >
+    <ion-item class="center-image">
+      <img id="user" src="assets/appsistencia-logo.png" style="height: 15rem; display: flex; " >
     </ion-item>
 
     <form [formGroup]="usuario">
@@ -35,15 +35,12 @@
     
       <!-- <ion-button expand="block" color="success" [disabled]="!usuario.valid" [routerLink]="['/homaalumno']" fill="outline">Ingresar</ion-button> -->
     
-      <ion-button expand="block" color="success" (click)="navegarExtras()" fill="outline">Navigate Extras</ion-button>
-    
+      <ion-button expand="block" color="success" (click)="navegarExtras()" fill="outline">Entrar</ion-button>
+      
+      <ion-button expand="block" color="success"  [routerLink]="['/pagina-pp']" fill="outline">Entrar profesores</ion-button>
       <!-- <ion-button expand="block" color="success" [routerLink]="['/home']" fill="outline">Nav RouiterLink</ion-button> -->
     
     
     
      </form>
- <ion-button [routerLink]="['/perfil-alumno']">
-  Perfil Alumno
- </ion-button>
- <ion-button (click)='navegar()' expand="">Perfil docente</ion-button>
 </ion-content>

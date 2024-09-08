@@ -1,5 +1,7 @@
 {
-  "name": "mytest",
-  "integrations": {},
+  "name": "capybara",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

@@ -25,3 +25,38 @@
 #container a {
   text-decoration: none;
 }
+
+.login-form {
+  padding: 16px;
+}
+
+.login-form ion-item {
+  margin-bottom: 16px;
+}
+
+.login-button {
+  margin-top: 16px;
+}
+
+.forgot-password {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  color: #3880ff;
+}
+
+.asistencias-section {
+  padding: 16px;
+}
+
+.asistencias-section h2 {
+  margin-bottom: 16px;
+}
+
+.asistencias-section ion-list {
+  background-color: #f9f9f9;
+}
+
+.asistencias-section ion-item {
+  --inner-padding-end: 0;
+}

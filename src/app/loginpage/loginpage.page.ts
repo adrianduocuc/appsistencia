@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, NavigationExtras} from '@angular/router';
-import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import {NavigationExtras} from '@angular/router' ;
+import { NavController } from '@ionic/angular';
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-loginpage',
+  templateUrl: './loginpage.page.html',
+  styleUrls: ['./loginpage.page.scss'],
 })
 export class LoginPage implements OnInit {
   user = {
@@ -12,7 +14,6 @@ export class LoginPage implements OnInit {
     password: ""
   };
 
-  
   constructor(private router: Router) { }
   
   usuario = new FormGroup({
@@ -40,7 +41,6 @@ export class LoginPage implements OnInit {
 
       this.router.navigate(['/home'],setData);
     }
-
-
+    
 
 }

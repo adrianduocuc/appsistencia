@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      {{usuario}}
-    </ion-title>
+    <ion-title>Appsistencia</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <!-- Sección de asistencias -->
+  <div class="asistencias-section">
+    <h2>Asistencias</h2>
+    <ion-list>
+      <ion-item>
+        <ion-label>
+          <h3>Fecha: Lunes 1 de enero del 2024</h3>
+          <p>Alumnos: 30</p>
+        </ion-label>
+        <ion-button [routerLink]="['/asignatura']" slot="end"> Mostrar </ion-button>
+      </ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{usuario}}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      <!-- Más filas de asistencias -->
+      <ion-item>
+        <ion-label>
+          <h3>Fecha: Martes 2 de enero del 2024</h3>
+          <p>Alumnos: 28</p>
+        </ion-label>
+        <ion-button slot="end">Mostrar</ion-button>
+      </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <ion-item>
+        <ion-label>
+          <h3>Fecha: Miércoles 3 de enero del 2024</h3>
+          <p>Alumnos: 29</p>
+        </ion-label>
+        <ion-button slot="end">Mostrar</ion-button>
+      </ion-item>7
+
+
+    </ion-list>
   </div>
+
+<ion-button [routerLink]="['/qrcode']" style="display: flex; justify-content: center;">
+  Agregar Asistencia
+</ion-button>
+
+<ion-button  [routerLink]="['/loginpage']" style="display: flex; justify-content: center;">
+  cerrar sesion</ion-button>
 </ion-content>
+

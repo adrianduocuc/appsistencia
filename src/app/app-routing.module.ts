@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PaginaPPPageModule } from './pagina-pp/pagina-pp.module';
 
 const routes: Routes = [
   {
@@ -8,25 +9,30 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'loginpage',
     pathMatch: 'full'
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
-    path: 'perfil-docente',
-    loadChildren: () => import('./perfil-docente/perfil-docente.module').then( m => m.PerfilDocentePageModule)
+    loadChildren: () => import('./loginpage/loginpage.module').then( m => m.LoginpagePageModule)
   },
   {
-    path: 'perfil-alumno',
-    loadChildren: () => import('./perfil-alumno/perfil-alumno.module').then( m => m.PerfilAlumnoPageModule)
+    path: 'loginpage',
+    loadChildren: () => import('./loginpage/loginpage.module').then( m => m.LoginpagePageModule)
   },
   {
-    path: 'asignatura',
-    loadChildren: () => import('./asignatura/asignatura.module').then( m => m.AsignaturaPageModule)
+    path: 'qrcode',
+    loadChildren: () => import('./qrcode/qrcode.module').then( m => m.QrcodePageModule)
   },
-
+  {
+    path: 'escaneado',
+    loadChildren: () => import('./escaneado/escaneado.module').then( m => m.EscaneadoPageModule)
+  },
+  {
+    path: 'pagina-pp',
+    loadChildren: () => import('./pagina-pp/pagina-pp.module').then( m => m.PaginaPPPageModule)
+  },
+  
 ];
 
 @NgModule({

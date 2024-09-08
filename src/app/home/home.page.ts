@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {Router, NavigationExtras,ActivatedRoute} from '@angular/router';
-import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router'; // Add the missing imports
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -26,3 +26,4 @@ export class HomePage {
   
    }
 }
+
