@@ -15,7 +15,7 @@
       <img id="user" src="assets/appsistencia-logo.png" style="height: 15rem; display: flex; " >
     </ion-item>
 
-    <form [formGroup]="usuarioForm">
+    <form [formGroup]="usuarioForm" (ngSubmit)="navegarExtras()" >
 
       <ion-item>
 
@@ -27,7 +27,7 @@
 
       <ion-item>
 
-       <ion-input label="Pass" labelPlacement="floating" placeholder="Pass" formControlName="pass"></ion-input>
+       <ion-input type = "password" label="Pass" labelPlacement="floating" placeholder="Pass" formControlName="pass"></ion-input>
 
       </ion-item>
 
