@@ -1,20 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>escaneado</ion-title>
+    <ion-title>Escaneado</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">escaneado</ion-title>
-      
+      <ion-title size="large">Escaneado</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
-<ion-content>
-<img class="center-image" id="user" src="assets/presente.png"style="height: 15rem; display: flex;">
-    <ion-button [routerLink]="['/home']">
-     ir a la pagina principal 
+
+  <!-- Contenido Principal -->
+  <ion-content padding>
+    <!-- Imagen centrada -->
+    <div class="image-container">
+      <img src="assets/presente.png" alt="Imagen de Escaneado" class="center-image">
+    </div>
+
+    <!-- Botón para ir a la página principal -->
+    <ion-button expand="block" color="primary" [routerLink]="['/home']">
+      Ir a la página principal
     </ion-button>
+  </ion-content>
 </ion-content>

@@ -29,6 +29,7 @@ export class LoginPage implements OnInit {
           role: 'profesor'
         }
       };
+      console.log('Navegando a pagina-pp con datos:', setData);
       this.router.navigate(['/pagina-pp'], setData);
     } else if (user === 'estu' && pass === '1234') {
       // Usuario es estudiante
@@ -38,6 +39,7 @@ export class LoginPage implements OnInit {
           role: 'estudiante'
         }
       };
+      console.log('Navegando a pagina-pp con datos:', setData);
       this.router.navigate(['/home'], setData);
     } else {
       // Credenciales incorrectas
