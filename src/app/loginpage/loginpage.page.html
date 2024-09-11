@@ -15,32 +15,32 @@
       <img id="user" src="assets/appsistencia-logo.png" style="height: 15rem; display: flex; " >
     </ion-item>
 
-    <form [formGroup]="usuario">
+    <form [formGroup]="usuarioForm">
 
       <ion-item>
-    
+
        <ion-input label="User" labelPlacement="floating" placeholder="User" formControlName="user"></ion-input>
-    
+
       </ion-item>
-    
-     
-    
+
+
+
       <ion-item>
-    
+
        <ion-input label="Pass" labelPlacement="floating" placeholder="Pass" formControlName="pass"></ion-input>
-    
+
       </ion-item>
-    
-     
-    
+
+
+
       <!-- <ion-button expand="block" color="success" [disabled]="!usuario.valid" [routerLink]="['/homaalumno']" fill="outline">Ingresar</ion-button> -->
-    
+
       <ion-button expand="block" color="success" (click)="navegarExtras()" fill="outline">Entrar</ion-button>
-      
+
       <ion-button expand="block" color="success"  [routerLink]="['/pagina-pp']" fill="outline">Entrar profesores</ion-button>
       <!-- <ion-button expand="block" color="success" [routerLink]="['/home']" fill="outline">Nav RouiterLink</ion-button> -->
-    
-    
-    
+
+
+
      </form>
 </ion-content>

@@ -27,10 +27,14 @@
     "@capacitor/keyboard": "6.0.2",
     "@capacitor/status-bar": "6.0.1",
     "@ionic/angular": "^8.0.0",
+    "@types/angular": "^1.8.9",
+    "express": "^5.0.0",
     "ionicons": "^7.0.0",
     "qrcode": "^1.5.4",
     "rxjs": "~7.8.0",
+    "serve-static": "^1.16.2",
     "tslib": "^2.3.0",
+    "webpack": "^5.94.0",
     "zone.js": "~0.14.2"
   },
   "devDependencies": {

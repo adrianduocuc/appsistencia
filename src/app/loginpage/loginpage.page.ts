@@ -1,46 +1,60 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import {NavigationExtras} from '@angular/router' ;
-import { NavController } from '@ionic/angular';
+import { Router, NavigationExtras } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.page.html',
   styleUrls: ['./loginpage.page.scss'],
 })
 export class LoginPage implements OnInit {
-  user = {
-    usuario: "",
-    password: ""
-  };
 
-  constructor(private router: Router) { }
-  
-  usuario = new FormGroup({
+  usuarioForm = new FormGroup({
+    user: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+    pass: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+  });
 
-    user: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(20)]),
-  
-    pass: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(20)]),
-  
-   });
+  constructor(private router: Router, private alertController: AlertController) { }
 
-   ngOnInit() {
-  }
+  navegarExtras() {
+    const user = this.usuarioForm.value.user;
+    const pass = this.usuarioForm.value.pass;
 
-
-  navegar(){
-    this.router.navigate(['/perfil-docente']); 
-  }
-  navegarExtras(){
-    let setData: NavigationExtras = {
-      state: {
-        id: this.usuario.value.user,
-        user: this.usuario.value.pass
-      }
+    // Redirección condicional basada en las credenciales
+    if (user === 'prof' && pass === '1234') {
+      // Usuario es profesor
+      let setData: NavigationExtras = {
+        state: {
+          id: user,
+          role: 'profesor'
+        }
       };
-
-      this.router.navigate(['/home'],setData);
+      this.router.navigate(['/pagina-pp'], setData);
+    } else if (user === 'estu' && pass === '1234') {
+      // Usuario es estudiante
+      let setData: NavigationExtras = {
+        state: {
+          id: user,
+          role: 'estudiante'
+        }
+      };
+      this.router.navigate(['/home'], setData);
+    } else {
+      // Credenciales incorrectas
+      this.presentAlert("Error Login", "Usuario o la contraseña son incorrectos");
     }
-    
+  }
 
+  // Función que muestra una alerta
+  async presentAlert(titulo: string, mensaje: string) {
+    const alert = await this.alertController.create({
+      header: 'Info Login',
+      subHeader: titulo,
+      message: mensaje,
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
+
+  ngOnInit() {}
 }
