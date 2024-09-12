@@ -32,7 +32,7 @@ const routes: Routes = [
     path: 'pagina-pp',
     loadChildren: () => import('./pagina-pp/pagina-pp.module').then( m => m.PaginaPPPageModule)
   },
-  
+
 ];
 
 @NgModule({

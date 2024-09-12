@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="custom-header">
     <ion-title>Inicio de sesión</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,8 +11,8 @@
     </ion-toolbar>
   </ion-header>
 
-    <ion-item class="center-image">
-      <img id="user" src="assets/appsistencia-logo.png" style="height: 15rem; display: flex; " >
+    <ion-item class="custom-item">
+      <img id="user" src="assets/appsistencia-logo.png" class="logo-image">
     </ion-item>
 
     <form [formGroup]="usuarioForm" (ngSubmit)="navegarExtras()" >
@@ -35,9 +35,9 @@
 
       <!-- <ion-button expand="block" color="success" [disabled]="!usuario.valid" [routerLink]="['/homaalumno']" fill="outline">Ingresar</ion-button> -->
 
-      <ion-button expand="block" color="success" (click)="navegarExtras()" fill="outline">Entrar</ion-button>
+      <ion-button class="custom-button" expand="block"  (click)="navegarExtras()" fill="solid">Entrar</ion-button>
 
-      <ion-button expand="block" color="success"  [routerLink]="['/pagina-pp']" fill="outline">Entrar profesores</ion-button>
+      <ion-button expand="block" color="success"  [routerLink]="['/pagina-pp']" fill="solid">Prueba del routerlink</ion-button>
       <!-- <ion-button expand="block" color="success" [routerLink]="['/home']" fill="outline">Nav RouiterLink</ion-button> -->
 
 

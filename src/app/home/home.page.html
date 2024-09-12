@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-header">
     <ion-title>Appsistencia</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,7 +13,7 @@
           <h3>Fecha: Lunes 1 de enero del 2024</h3>
           <p>Alumnos: 30</p>
         </ion-label>
-        <ion-button [routerLink]="['/asignatura']" slot="end"> Mostrar </ion-button>
+        <ion-button class="custom-button" [routerLink]="['home/asignatura']" slot="end"> Mostrar </ion-button>
       </ion-item>
 
       <!-- Más filas de asistencias -->
@@ -22,7 +22,7 @@
           <h3>Fecha: Martes 2 de enero del 2024</h3>
           <p>Alumnos: 28</p>
         </ion-label>
-        <ion-button slot="end">Mostrar</ion-button>
+        <ion-button  class="custom-button" slot="end">Mostrar</ion-button>
       </ion-item>
 
       <ion-item>
@@ -30,18 +30,18 @@
           <h3>Fecha: Miércoles 3 de enero del 2024</h3>
           <p>Alumnos: 29</p>
         </ion-label>
-        <ion-button slot="end">Mostrar</ion-button>
+        <ion-button class="custom-button" slot="end">Mostrar</ion-button>
       </ion-item>7
 
 
     </ion-list>
   </div>
 
-<ion-button [routerLink]="['/qrcode']" style="display: flex; justify-content: center;">
+<ion-button class="custom-button" [routerLink]="['/qrcode']" style="display: flex; justify-content: center;">
   Agregar Asistencia
 </ion-button>
 
-<ion-button  [routerLink]="['/loginpage']" style="display: flex; justify-content: center;">
+<ion-button  class="custom-button" [routerLink]="['/loginpage']" style="display: flex; justify-content: center;">
   cerrar sesion</ion-button>
 </ion-content>
 

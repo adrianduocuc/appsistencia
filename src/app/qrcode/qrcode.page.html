@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-header">
     <ion-title>Appsistencia</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,7 +10,7 @@
     <h2>Escanea el código QR para marcar asistencia</h2>
     <img class="center-image" id="user" src="assets/leer.jpeg" style="height: 15rem; display: flex; " >
   </div>
-  <ion-button [routerLink]="['/escaneado']" style="display: flex; justify-content: center;">
+  <ion-button class="custom-button" [routerLink]="['/escaneado']" style="display: flex; justify-content: center;">
     <img class="center-image" id="user" src="assets/camara.png"style="height: 7.5rem; display: flex;">
   </ion-button>
 </ion-content>

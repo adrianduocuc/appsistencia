@@ -1,70 +1,89 @@
+/* Contenedor principal */
 .login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Usar viewport height en lugar de porcentaje */
+  background-color: #f5f5f5; /* Agregar un color de fondo */
+}
 
-    display: flex;
-  
-    flex-direction: column;
-  
-    align-items: center;
-  
-    justify-content: center;
-  
-    height: 100vh; /* Usar viewport height en lugar de porcentaje */
-  
-    background-color: #f5f5f5; /* Agregar un color de fondo */
-  
-   }
-   .centered-container {
-  
-    display: flex;
-  
-    justify-content: center;
-  
-    align-items: center;
-  
-    height: 50vh; /* Reducir la altura del contenedor */
-  
-   }
-   .login-image {
-  
-    max-width: 50%;
-  
-    max-height: 50%; /* Añadir máximo alto */
-  
-    width: auto;
-  
-    height: auto;
-  
-   }
-  
-   .input-container {
-  
-    text-align: center;
-  
-    margin: 1em 0; /* Agregar margen */
-  
-   }
-  
-   .button-container {
-  
-    display: flex;
-  
-    justify-content: center;
-  
-    align-items: flex-end;
-  
-    margin-top: auto; /* Mover el botón hacia abajo */
-  
-    padding-bottom: 2em; /* Agregar espacio en la parte inferior */
-  
-   }
-   .center-image {
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */
-    text-align: center;      /* Asegura que la imagen esté centrada */
-  }
-  
-  #user {
-    display: block;
-    margin: 0 auto;  /* Centra la imagen dentro del contenedor */
-  }
-  
+/* Contenedor centrado */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Reducir la altura del contenedor */
+}
+
+/* Imagen de login */
+.login-image {
+  max-width: 50%;
+  max-height: 50%; /* Añadir máximo alto */
+  width: auto;
+  height: auto;
+}
+
+/* Contenedor de entrada */
+.input-container {
+  text-align: center;
+  margin: 1em 0; /* Agregar margen */
+}
+
+/* Contenedor del botón */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: auto; /* Mover el botón hacia abajo */
+  padding-bottom: 2em; /* Agregar espacio en la parte inferior */
+}
+
+/* Estilo de la imagen */
+#user {
+  display: block;
+  margin: 0 auto;  /* Centra la imagen dentro del contenedor */
+}
+
+/* Estilo personalizado para el ion-header */
+.custom-header {
+  --background: #28a745; /* Verde */
+  --color: black;        /* Texto en negro */
+  font-weight: bold; /* Negrita */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.custom-header ion-title {
+  font-weight: bold;     /* Pone el texto en negrita */
+  font-size: 1.2rem;     /* Ajusta el tamaño de la fuente según tu preferencia */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+}
+
+/* Estilo para el ítem que contiene el logo */
+.custom-item {
+  --background: #4CAF50; /* Verde */
+  --padding-start: 0; /* Elimina el relleno a la izquierda */
+  --padding-end: 0; /* Elimina el relleno a la derecha */
+  --inner-padding: 0; /* Elimina el relleno interno */
+  --border: none; /* Elimina el borde si es necesario */
+}
+
+/* Estilo para la imagen del logo */
+.logo-image {
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+  height: auto; /* Mantiene la proporción del logo */
+  display: block; /* Elimina el espacio blanco debajo de la imagen */
+}
+
+/* Estilo para el botón de Entrar */
+.custom-button {
+  --background: #4CAF50; /* Fondo verde */
+  --border-color: #000; /* Bordes negros */
+  --color: #fff; /* Texto blanco */
+  --padding-start: 0.5rem; /* Espaciado interno opcional */
+  --padding-end: 0.5rem; /* Espaciado interno opcional */
+  border: 2px solid #000; /* Bordes negros */
+  color: #fff !important; /* Asegúrate de que el texto sea blanco */
+}
+
