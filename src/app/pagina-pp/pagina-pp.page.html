@@ -14,19 +14,31 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>PVC xxxx-xxx</ion-card-title>
+      <ion-card-title >PVC xxxx-xxx</ion-card-title>
       <ion-card-subtitle>Programación Web</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
 
       <ion-item>
-        <img src="assets/images.png" alt="Código QR" style="width: 50%; height: auto;">
+        <img src="assets/images.png" alt="Código QR" style="width: 50%; height: auto; margin-left: 100px;">
       </ion-item>
-      <ion-button class="custom-button" expand="block" >Mostrar QR</ion-button>
+      <ion-button class="custom-button" expand="block" (click)="openQRModal()">Mostrar QR</ion-button>
     </ion-card-content>
   </ion-card>
 
-  <!-- Ordenando pero quedo inmenso el QR Podriamos agregar un boton de "MOSTRAR QR" -->
+  <!-- Ion modal para el QR-->
+  <ion-modal [isOpen]="isQRModalOpen" (didDismiss)="closeQRModal()" cssClass="qr-modal">
+    <ng-template>
+      <ion-content>
+        <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+          <img src="assets/images.png" alt="Código QR Ampliado" style="width: 90%; height: auto;">
+        </div>
+        <ion-button expand="block" (click)="closeQRModal()">Cerrar</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Hice para mostrar el QR con un MODAL que salia en los componentes IONIC -->
   <ion-list>
     <ion-item>
       <ion-label>

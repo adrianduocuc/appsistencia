@@ -6,8 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagina-pp.page.scss'],
 })
 export class PaginaPPPage implements OnInit {
-
+  isQRModalOpen = false;
   constructor() { }
+
+  openQRModal() {
+    this.isQRModalOpen = true;
+  }
+
+  closeQRModal() {
+    this.isQRModalOpen = false;
+  }
 
   ngOnInit() {
   }

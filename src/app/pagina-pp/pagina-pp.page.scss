@@ -7,3 +7,9 @@
   border: 2px solid #000; /* Bordes negros */
   color: #fff !important; /* Asegúrate de que el texto sea blanco */
 }
+
+.qr-modal {
+  --width: 80%; /* Ajusta el tamaño del modal si es necesario */
+  --height: 80%;
+  --border-radius: 12px;
+}
