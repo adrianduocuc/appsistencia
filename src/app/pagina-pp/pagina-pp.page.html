@@ -1,20 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Bienvenido Profesor</ion-title>
-        <h2>Bienvenido: {{user}}</h2>
+    <ion-title>Perfil Profesor </ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-  <ion-header collapse="condense">
+<ion-card>
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large" style="color: success">Inicio</ion-title>
-      
-      <ion-card-subtitle></ion-card-subtitle>
+      <ion-title>Bienvenido :{{user}} </ion-title>
+      <ion-card-subtitle>Fecha: {{fecha}}</ion-card-subtitle>
     </ion-toolbar>
   </ion-header>
+</ion-card>
 
+<ion-card>
+  <ion-card-content>
+    Este es el listado de sus cursos :
+  </ion-card-content>
+</ion-card>
 <ion-list>
   <ion-item *ngFor = "let curso of cursos">
     <ion-label >
@@ -22,16 +27,16 @@
       <h2>Nombre: {{curso.nombre}}</h2>
       <h2>Curso: {{curso.codigo}}</h2>
       <h2>seccion: {{curso.seccion}}</h2>
-      <ion-button fill="out-line" slot="end"(click)="verDetalle(curso.id)">
+    </ion-label>
+      <ion-button fill="outline" slot="end"(click)="verDetalle(curso.nombre,curso.id, curso.codigo,curso.seccion)">
         ver detalles
       </ion-button>
-    </ion-label>
   </ion-item>
 </ion-list>
 
 
   <!-- Ion modal para el QR-->
-  <ion-modal [isOpen]="isQRModalOpen" (didDismiss)="closeQRModal()" cssClass="qr-modal">
+<!--   <ion-modal [isOpen]="isQRModalOpen" (didDismiss)="closeQRModal()" cssClass="qr-modal">
     <ng-template>
       <ion-content>
         <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
@@ -40,7 +45,7 @@
         <ion-button expand="block" (click)="closeQRModal()">Cerrar</ion-button>
       </ion-content>
     </ng-template>
-  </ion-modal>
+  </ion-modal> -->
 
 </ion-content>
 

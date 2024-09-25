@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'pagina-pp',
+    redirectTo: 'loginpage',
     pathMatch: 'full'
   },
   {
@@ -20,6 +20,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+
   {
     path: 'qrcode',
     loadChildren: () => import('./qrcode/qrcode.module').then( m => m.QrcodePageModule)
@@ -27,7 +28,11 @@ const routes: Routes = [
   {
     path: 'escaneado',
     loadChildren: () => import('./escaneado/escaneado.module').then( m => m.EscaneadoPageModule)
+  },  {
+    path: 'detalle-curso',
+    loadChildren: () => import('./detalle-curso/detalle-curso.module').then( m => m.DetalleCursoPageModule)
   },
+
 
 
 ];
