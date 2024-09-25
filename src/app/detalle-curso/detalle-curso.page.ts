@@ -1,6 +1,6 @@
 import { ActivatedRoute , Router, NavigationExtras} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-detalle-curso',
   templateUrl: './detalle-curso.page.html',
@@ -14,10 +14,10 @@ export class DetalleCursoPage implements OnInit {
   seccionCurso=""
 
   alumnos =[
-    {rut:"1-1",nombre:"Diego Cares", estado:"Presente"},
+    {rut:"1-1",nombre:"Diego Cares", estado:"ausente"},
     {rut:"1-2",nombre:"Katherine Rubilar", estado:"presente"},
-    {rut:"1-3",nombre:"Adrian Rodriguez", estado:"resente"},
-    {rut:"1-4",nombre:"Maximiliano Toledo", estado:"presente"},
+    {rut:"1-3",nombre:"Adrian Rodriguez", estado:"presente"},
+    {rut:"1-4",nombre:"Maximiliano Toledo", estado:"ausente"},
     {rut:"1-5",nombre:"Dieguito Maradona", estado:"presente"}
   ];
 
@@ -31,6 +31,18 @@ export class DetalleCursoPage implements OnInit {
       }
     });
   }
+
+  isQRModalOpen = false;
+
+
+  openQRModal() {
+    this.isQRModalOpen = true;
+  }
+
+  closeQRModal() {
+    this.isQRModalOpen = false;
+  }
+
 
   ngOnInit() {
   }

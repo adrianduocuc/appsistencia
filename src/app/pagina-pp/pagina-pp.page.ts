@@ -41,16 +41,7 @@ verDetalle(nombre:string, id:number , codigo:string, seccion:string){
   this.router.navigate(['/detalle-curso'], setData);
 }
 
-/*   isQRModalOpen = false;
-  constructor() { }
 
-  openQRModal() {
-    this.isQRModalOpen = true;
-  }
-
-  closeQRModal() {
-    this.isQRModalOpen = false;
-  } */
 
   ngOnInit() {
   }

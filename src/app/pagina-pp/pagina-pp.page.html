@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="custom-header">
     <ion-title>Perfil Profesor </ion-title>
 
   </ion-toolbar>
@@ -10,7 +10,7 @@
   <ion-header>
     <ion-toolbar>
       <ion-title>Bienvenido :{{user}} </ion-title>
-      <ion-card-subtitle>Fecha: {{fecha}}</ion-card-subtitle>
+      <ion-card-subtitle> Fecha: {{fecha}}</ion-card-subtitle>
     </ion-toolbar>
   </ion-header>
 </ion-card>
@@ -28,24 +28,14 @@
       <h2>Curso: {{curso.codigo}}</h2>
       <h2>seccion: {{curso.seccion}}</h2>
     </ion-label>
-      <ion-button fill="outline" slot="end"(click)="verDetalle(curso.nombre,curso.id, curso.codigo,curso.seccion)">
+      <ion-button class="custom-green-button" fill="outline" slot="end"(click)="verDetalle(curso.nombre,curso.id, curso.codigo,curso.seccion)">
         ver detalles
       </ion-button>
   </ion-item>
 </ion-list>
 
 
-  <!-- Ion modal para el QR-->
-<!--   <ion-modal [isOpen]="isQRModalOpen" (didDismiss)="closeQRModal()" cssClass="qr-modal">
-    <ng-template>
-      <ion-content>
-        <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-          <img src="assets/images.png" alt="Código QR Ampliado" style="width: 90%; height: auto;">
-        </div>
-        <ion-button expand="block" (click)="closeQRModal()">Cerrar</ion-button>
-      </ion-content>
-    </ng-template>
-  </ion-modal> -->
+
 
 </ion-content>
 

@@ -6,40 +6,42 @@
 <ion-content>
   <!-- Sección de asistencias -->
   <div class="asistencias-section">
-    <h2>Asistencias</h2>
+    <h2 >Toma de asistencia</h2>
     <ion-list>
       <ion-item>
         <ion-label>
-          <h3>Fecha: Lunes 1 de enero del 2024</h3>
+          <h3>Calidad</h3>
           <p>Alumnos: 30</p>
         </ion-label>
-        <ion-button class="custom-button" [routerLink]="['home/asignatura']" slot="end"> Mostrar </ion-button>
+        <ion-button class="custom-button" [routerLink]="['/qrcode']" slot="end"> Mostrar </ion-button>
       </ion-item>
 
       <!-- Más filas de asistencias -->
       <ion-item>
         <ion-label>
-          <h3>Fecha: Martes 2 de enero del 2024</h3>
+          <h3>POO</h3>
           <p>Alumnos: 28</p>
         </ion-label>
-        <ion-button  class="custom-button" slot="end">Mostrar</ion-button>
+        <ion-button  class="custom-button" [routerLink]="['/qrcode']" slot="end">Mostrar</ion-button>
       </ion-item>
 
       <ion-item>
         <ion-label>
-          <h3>Fecha: Miércoles 3 de enero del 2024</h3>
+          <h3>Software</h3>
           <p>Alumnos: 29</p>
         </ion-label>
-        <ion-button class="custom-button" slot="end">Mostrar</ion-button>
-      </ion-item>7
-
+        <ion-button class="custom-button" [routerLink]="['/qrcode']" slot="end">Mostrar</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h3>Ingenería</h3>
+          <p>Alumnos: 32</p>
+        </ion-label>
+        <ion-button class="custom-button" [routerLink]="['/qrcode']" slot="end">Mostrar</ion-button>
+      </ion-item>
 
     </ion-list>
   </div>
-
-<ion-button class="custom-button" [routerLink]="['/qrcode']" style="display: flex; justify-content: center;">
-  Agregar Asistencia
-</ion-button>
 
 <ion-button  class="custom-button" [routerLink]="['/loginpage']" style="display: flex; justify-content: center;">
   cerrar sesion</ion-button>
