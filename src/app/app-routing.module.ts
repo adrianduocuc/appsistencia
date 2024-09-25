@@ -4,21 +4,21 @@ import { PaginaPPPageModule } from './pagina-pp/pagina-pp.module';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'loginpage',
+    loadChildren: () => import('./loginpage/loginpage.module').then( m => m.LoginpagePageModule)
   },
   {
     path: '',
-    redirectTo: 'loginpage',
+    redirectTo: 'pagina-pp',
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    loadChildren: () => import('./loginpage/loginpage.module').then( m => m.LoginpagePageModule)
+    path: 'pagina-pp',
+    loadChildren: () => import('./pagina-pp/pagina-pp.module').then( m => m.PaginaPPPageModule)
   },
   {
-    path: 'loginpage',
-    loadChildren: () => import('./loginpage/loginpage.module').then( m => m.LoginpagePageModule)
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'qrcode',
@@ -28,10 +28,7 @@ const routes: Routes = [
     path: 'escaneado',
     loadChildren: () => import('./escaneado/escaneado.module').then( m => m.EscaneadoPageModule)
   },
-  {
-    path: 'pagina-pp',
-    loadChildren: () => import('./pagina-pp/pagina-pp.module').then( m => m.PaginaPPPageModule)
-  },
+
 
 ];
 
