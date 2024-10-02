@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.page.html',
@@ -9,16 +10,23 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router: Router, private alertController: AlertController) { }
-
   usuarioForm = new FormGroup({
     user: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
     pass: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
   });
 
+  constructor(private router: Router, private alertController: AlertController) { }
+
+  ngOnInit() { }
 
   navegarExtras() {
-    //Creacion del set de datos
+    // Verifica si el formulario es válido
+    if (this.usuarioForm.invalid) {
+      this.presentAlert("Error Login", "Por favor completa todos los campos requeridos.");
+      return;
+    }
+
+    // Creación del set de datos
     let setData: NavigationExtras = {
       state: {
         id: this.usuarioForm.value.user,
@@ -26,21 +34,19 @@ export class LoginPage implements OnInit {
       }
     };
 
-      const loginMap: { [key: string]: string}={
-        'prof:1234': '/pagina-pp',
-        'estu:1234': '/home'
-      };
+    const loginMap: { [key: string]: string } = {
+      'prof:1234': '/menuprofesor',
+      'estu:1234': '/menualumno'
+    };
 
-      const userPassKey = `${this.usuarioForm.value.user}:${this.usuarioForm.value.pass}`;
-      if (loginMap[userPassKey]) {
-        this.router.navigate([loginMap[userPassKey]], setData);
-      } else {
-        this.presentAlert("Error Login", "Usuario o contraseña no son válidos");
-      }
-
+    const userPassKey = `${this.usuarioForm.value.user}:${this.usuarioForm.value.pass}`;
+    if (loginMap[userPassKey]) {
+      this.router.navigate([loginMap[userPassKey]], setData);
+    } else {
+      this.presentAlert("Error Login", "Usuario o contraseña no son válidos");
+    }
   }
 
-  // Función que muestra una alerta
   async presentAlert(titulo: string, mensaje: string) {
     const alert = await this.alertController.create({
       header: 'Info Login',
@@ -50,6 +56,4 @@ export class LoginPage implements OnInit {
     });
     await alert.present();
   }
-
-  ngOnInit() {}
 }

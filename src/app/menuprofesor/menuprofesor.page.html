@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar class="custom-header">
+    <ion-title>
+      <span class="app-name">App<span class="highlight">sistencia</span></span>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="person-circle" size="large"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="menu-container">
+    <!-- Mostrar el nombre del usuario logueado -->
+    <h2 class="greeting-title">Hola, {{nombreUsuario}}</h2>
+
+    <ion-button expand="block" class="menu-button">
+      <ion-icon slot="start" name="calendar-outline"></ion-icon>
+      Asistencias
+      <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button expand="block" class="menu-button" (click)="goToPaginaPP()">
+      <ion-icon slot="start" name="book-outline"></ion-icon>
+      Cursos
+      <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button expand="block" class="menu-button">
+      <ion-icon slot="start" name="camera-outline"></ion-icon>
+      Eventos
+      <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button expand="block" class="menu-button">
+      <ion-icon slot="start" name="hand-outline"></ion-icon>
+      Anuncios
+      <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button expand="block" class="menu-button">
+      <ion-icon slot="start" name="settings-outline"></ion-icon>
+      Ajustes
+      <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button expand="block" class="menu-button open-site-button">
+      Abrir en el sitio
+    </ion-button>
+  </div>
+</ion-content>
