@@ -8,38 +8,12 @@
   <ion-card class="center-card">
     <ion-header>
       <ion-toolbar>
+        <img [src]="qrDataURL" *ngIf="qrDataURL" class="qr-image">
         <ion-title>Curso: {{nombreCurso}}</ion-title>
         <ion-card-subtitle>ID Curso: {{idCurso}}</ion-card-subtitle>
       </ion-toolbar>
     </ion-header>
-    <div class="qr-button-container">
-      <ion-button class="green-button" (click)="openQRModal()">Mostrar QR</ion-button>
-    </div>
   </ion-card>
-
-  <!-- Ion modal para el QR -->
-  <ion-modal
-    [isOpen]="isQRModalOpen"
-    (didDismiss)="closeQRModal()"
-    backdropDismiss="true"
-    cssClass="qr-modal"
-  >
-    <ng-template>
-      <ion-content (click)="closeQRModal()" class="qr-modal-content">
-        <div class="qr-image-container">
-          <img
-            src="assets/images.png"
-            alt="Código QR Ampliado"
-            class="qr-image"
-          >
-        </div>
-        <ion-button expand="full" (click)="closeQRModal()" class="close-button">
-          Cerrar
-        </ion-button>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
-
   <ion-list>
     <ion-item *ngFor="let alumno of alumnos">
       <ion-label>

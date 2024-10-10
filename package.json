@@ -31,6 +31,7 @@
     "express": "^5.0.0",
     "ionicons": "^7.0.0",
     "qrcode": "^1.5.4",
+    "qrcode-generator": "^1.4.4",
     "rxjs": "~7.8.0",
     "serve-static": "^1.16.2",
     "tslib": "^2.3.0",

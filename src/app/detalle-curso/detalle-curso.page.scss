@@ -1,7 +1,7 @@
 .custom-header {
   --background: #28a745; /* Verde */
   --color: black;        /* Texto en negro */
-  font-weight: bold; /* Negrita */
+  font-weight: bold;     /* Negrita */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
@@ -15,18 +15,18 @@
 .custom-button {
   --background: #4CAF50; /* Fondo verde */
   --border-color: #000; /* Bordes negros */
-  --color: #fff; /* Texto blanco */
+  --color: #fff;        /* Texto blanco */
   --padding-start: 0.5rem; /* Espaciado interno opcional */
-  --padding-end: 0.5rem; /* Espaciado interno opcional */
-  border: 2px solid #000; /* Bordes negros */
-  color: #fff !important; /* Asegúrate de que el texto sea blanco */
+  --padding-end: 0.5rem;   /* Espaciado interno opcional */
+  border: 2px solid #000;  /* Bordes negros */
+  color: #fff !important;  /* Asegúrate de que el texto sea blanco */
 }
 
 ion-card-header {
-  display: flex;               /* Usa Flexbox para alinear elementos */
+  display: flex;                /* Usa Flexbox para alinear elementos */
   justify-content: space-between; /* Espacio entre los elementos */
-  align-items: center;        /* Centra verticalmente los elementos */
-  padding: 16px;             /* Añade un poco de espaciado alrededor */
+  align-items: center;          /* Centra verticalmente los elementos */
+  padding: 16px;                /* Añade un poco de espaciado alrededor */
 }
 
 ion-card-subtitle {
@@ -36,33 +36,31 @@ ion-card-subtitle {
 }
 
 .close-button {
-  margin: 5px; /* Espaciado para el botón de cerrar */
-  --background: #28a745; /* Fondo verde */
-  --color: white; /* Texto blanco */
-  margin-top: 20px; /* Espacio arriba del botón */
+  margin: 5px;               /* Espaciado para el botón de cerrar */
+  --background: #28a745;     /* Fondo verde */
+  --color: white;            /* Texto blanco */
+  margin-top: 20px;          /* Espacio arriba del botón */
 }
 
 .green-button {
   --background: #28a745; /* Fondo verde */
-  --color: white; /* Texto blanco */
-  border: none; /* Sin bordes */
-  margin-top: 10px; /* Margen superior */
+  --color: white;        /* Texto blanco */
+  border: none;          /* Sin bordes */
+  margin-top: 10px;      /* Margen superior */
 }
 
 .qr-image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho */
-  height: 650px; /* Limita la altura máxima */
-  padding: 20px; /* Espaciado alrededor de la imagen */
+  width: 100%;      /* Asegura que el contenedor ocupe el 100% del ancho */
+  padding: 20px;    /* Espaciado alrededor de la imagen */
 }
 
-.qr-image {
-  width: 600px; /* Ajusta el ancho al 100% del contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-
-  max-height: 600px; /* Limita la altura máxima para que no exceda el contenedor */
+.qr-image, .qr-image-small {
+  width: 150px;    /* Ajusta el tamaño de la imagen */
+  height: 150px;
+  object-fit: contain; /* Asegura que la imagen mantenga su proporción */
 }
 
 .status-circle {
@@ -79,4 +77,40 @@ ion-card-subtitle {
 
 .absent {
   background-color: red;
+}
+
+.qr-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-button-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.close-button {
+  margin-top: 20px;
+}
+
+.center-card {
+  margin: auto;
+  text-align: center;
+}
+
+.status-circle.present {
+  background-color: green;
+}
+
+.status-circle.absent {
+  background-color: red;
+}
+
+.status-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 10px;
 }
