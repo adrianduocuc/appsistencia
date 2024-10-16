@@ -1,6 +1,7 @@
 // pagina-pp.page.ts
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, ActivatedRoute, Router } from '@angular/router';
+import { ConsumoapiService } from '../service/consumoapi.service';
 
 @Component({
   selector: 'app-pagina-pp',
@@ -8,7 +9,7 @@ import { NavigationExtras, ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./pagina-pp.page.scss'],
 })
 export class PaginaPPPage implements OnInit {
-
+  titulo: string= "chupala";
   user = "";
   now = new Date();
   fecha = this.now.toLocaleString();
@@ -20,13 +21,26 @@ export class PaginaPPPage implements OnInit {
     { id: 4, nombre: 'Software', codigo: 'APY3444', seccion: '-013V' }
   ];
 
-  constructor(private router: Router) {
-    const navigation = this.router.getCurrentNavigation();
-    if (navigation && navigation.extras.state) {
-      this.user = navigation.extras.state['id'] || ""; // Accede a 'id' usando la notación de corchetes
-      console.log(this.user); // Verifica en la consola
-    }
+  constructor(private consumoAPI: ConsumoapiService, private activeroute: ActivatedRoute, private router: Router) {
+    this.activeroute.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation()?.extras.state) {
+        this.user = this.router.getCurrentNavigation()?.extras.state?.['id'];
+        console.log(this.router.getCurrentNavigation()?.extras.state?.['pass']);
+      }
+    })
   }
+
+
+  ngOnInit() : void {
+    this.obtenerData();
+  }
+
+//this.
+obtenerData(){
+  this.consumoAPI.getPosts().subscribe((res)=>{
+    this.titulo = res[2].tittle;
+  })
+}
 
   verDetalle(nombre: string, id: number, codigo: string, seccion: string) {
     let setData: NavigationExtras = {
@@ -41,5 +55,5 @@ export class PaginaPPPage implements OnInit {
     this.router.navigate(['/detalle-curso'], setData);
   }
 
-  ngOnInit() {}
+
 }
