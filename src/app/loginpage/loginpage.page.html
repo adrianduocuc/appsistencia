@@ -15,7 +15,7 @@
     <img id="user" src="assets/appsistencia-logo.png" class="logo-image">
   </ion-item>
 
-  <form [formGroup]="usuarioForm" (ngSubmit)="navegarExtras()"> 
+  <form [formGroup]="usuarioForm" (ngSubmit)="navegarExtras()">
 
     <ion-item>
       <ion-input label="User" labelPlacement="floating" placeholder="User" formControlName="user"></ion-input>
@@ -27,7 +27,7 @@
 
     <ion-button class="custom-button" expand="block"  (click)="navegarExtras()" fill="solid">Entrar</ion-button>
 
-    <ion-button expand="block" color="success" [routerLink]="['/pagina-pp']" fill="solid">Prueba del routerlink</ion-button>
+
 
   </form>
 </ion-content>

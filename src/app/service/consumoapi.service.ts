@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders , HttpErrorResponse} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { retry , catchError } from 'rxjs/operators';
 
 
 @Injectable({
@@ -17,7 +18,7 @@ export class ConsumoapiService {
   //crea nuestro metodo de consumo
 
 getPosts():Observable<any>{
-  return this.http.get(this.apiURL+'/posts');
+  return this.http.get(this.apiURL+'/posts/').pipe(retry(3));
 }
 
 }

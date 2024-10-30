@@ -9,7 +9,7 @@ import { ConsumoapiService } from '../service/consumoapi.service';
   styleUrls: ['./pagina-pp.page.scss'],
 })
 export class PaginaPPPage implements OnInit {
-  titulo: string= "chupala";
+  titulo:string = "";
   user = "";
   now = new Date();
   fecha = this.now.toLocaleString();
@@ -35,10 +35,10 @@ export class PaginaPPPage implements OnInit {
     this.obtenerData();
   }
 
-//this.
+//  this.titulo = res[2].title;
 obtenerData(){
-  this.consumoAPI.getPosts().subscribe((res)=>{
-    this.titulo = res[2].tittle;
+  this.consumoAPI.getPosts().subscribe((respuesta)=>{
+    this.titulo = respuesta[65].title;;
   })
 }
 
