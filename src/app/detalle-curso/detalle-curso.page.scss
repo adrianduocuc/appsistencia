@@ -7,90 +7,47 @@
 }
 
 .custom-header ion-title {
-  font-weight: bold;     /* Pone el texto en negrita */
-  font-size: 1.2rem;     /* Ajusta el tamaño de la fuente según tu preferencia */
+  font-weight: bold;     /* Negrita */
+  font-size: 1.2rem;     /* Tamaño de fuente */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra del texto */
 }
 
+.custom-button, .green-button, .close-button {
+  --color: white;          /* Texto blanco */
+}
+
 .custom-button {
-  --background: #4CAF50; /* Fondo verde */
-  --border-color: #000; /* Bordes negros */
-  --color: #fff;        /* Texto blanco */
-  --padding-start: 0.5rem; /* Espaciado interno opcional */
-  --padding-end: 0.5rem;   /* Espaciado interno opcional */
-  border: 2px solid #000;  /* Bordes negros */
-  color: #fff !important;  /* Asegúrate de que el texto sea blanco */
+  --background: #4CAF50;   /* Fondo verde */
+  --border-color: #000;     /* Bordes negros */
+  --padding-start: 0.5rem;  /* Espaciado interno opcional */
+  --padding-end: 0.5rem;    /* Espaciado interno opcional */
+  border: 2px solid #000;   /* Bordes negros */
+  color: #fff !important;    /* Asegúrate de que el texto sea blanco */
 }
 
-ion-card-header {
-  display: flex;                /* Usa Flexbox para alinear elementos */
-  justify-content: space-between; /* Espacio entre los elementos */
-  align-items: center;          /* Centra verticalmente los elementos */
-  padding: 16px;                /* Añade un poco de espaciado alrededor */
-}
-
-ion-card-subtitle {
-  margin-left: 16px;         /* Añade espaciado a la izquierda del subtítulo */
-  font-size: 0.9rem;         /* Ajusta el tamaño de la fuente si es necesario */
-  color: #666;               /* Cambia el color del subtítulo si deseas */
+.green-button {
+  --background: #28a745;    /* Fondo verde */
+  border: none;              /* Sin bordes */
+  margin-top: 10px;         /* Margen superior */
 }
 
 .close-button {
+  --background: #28a745;     /* Fondo verde */
   margin: 5px;               /* Espaciado para el botón de cerrar */
   margin-top: 20px;          /* Espacio arriba del botón */
 }
 
-.green-button {
-  --background: #28a745; /* Fondo verde */
-  --color: white;        /* Texto blanco */
-  border: none;          /* Sin bordes */
-  margin-top: 10px;      /* Margen superior */
+ion-card-header {
+  display: flex;                    /* Usa Flexbox para alinear elementos */
+  justify-content: space-between;   /* Espacio entre los elementos */
+  align-items: center;              /* Centra verticalmente los elementos */
+  padding: 16px;                    /* Espaciado alrededor */
 }
 
-.qr-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;      /* Asegura que el contenedor ocupe el 100% del ancho */
-  padding: 20px;    /* Espaciado alrededor de la imagen */
-}
-
-.qr-image, .qr-image-small {
-  width: 150px;    /* Ajusta el tamaño de la imagen */
-  height: 150px;
-  object-fit: contain; /* Asegura que la imagen mantenga su proporción */
-}
-
-.status-circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.present {
-  background-color: green;
-}
-
-.absent {
-  background-color: red;
-}
-
-.qr-modal-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.qr-button-container {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.close-button {
-  margin-top: 20px;
+ion-card-subtitle {
+  margin-left: 16px;               /* Espaciado a la izquierda del subtítulo */
+  font-size: 0.9rem;               /* Tamaño de la fuente */
+  color: #666;                     /* Color del subtítulo */
 }
 
 .center-card {
@@ -99,8 +56,9 @@ ion-card-subtitle {
 }
 
 .status-circle {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-left: 10px;
+  width: 20px;                       /* Ajusta el tamaño del círculo */
+  height: 20px;
+  border-radius: 50%;                /* Hace que el span sea un círculo */
+  margin-left: 10px;                 /* Espacio entre el círculo y el texto */
+  display: inline-block;              /* Asegúrate de que el span se muestre como un bloque en línea */
 }

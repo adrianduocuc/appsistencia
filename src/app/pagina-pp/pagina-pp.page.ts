@@ -14,12 +14,8 @@ export class PaginaPPPage implements OnInit {
   now = new Date();
   fecha = this.now.toLocaleString();
 
-  cursos = [
-    { id: 1, nombre: 'POO', codigo: 'APY4465', seccion: '-010V' },
-    { id: 2, nombre: 'calidad', codigo: 'APY3365', seccion: '-011V' },
-    { id: 3, nombre: 'ingenieria', codigo: 'APY2265', seccion: '-012V' },
-    { id: 4, nombre: 'Software', codigo: 'APY3444', seccion: '-013V' }
-  ];
+  //Crar listado de cursos
+  cursos : any[] = [];
 
   constructor(private consumoAPI: ConsumoapiService, private activeroute: ActivatedRoute, private router: Router) {
     this.activeroute.queryParams.subscribe(params => {
@@ -35,10 +31,10 @@ export class PaginaPPPage implements OnInit {
     this.obtenerData();
   }
 
-//  this.titulo = res[2].title;
+//  Crear Metodo para consumir el service
 obtenerData(){
-  this.consumoAPI.getPosts().subscribe((respuesta)=>{
-    this.titulo = respuesta[65].title;;
+  this.consumoAPI.obtenerCursosPorProfesor(1).subscribe((respuesta)=>{
+    this.cursos = respuesta;
   })
 }
 

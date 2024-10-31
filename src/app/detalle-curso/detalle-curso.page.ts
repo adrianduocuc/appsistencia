@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import * as qrcode from 'qrcode-generator'; // Asegúrate de importar la librería
-
+import { ConsumoapiService } from '../service/consumoapi.service';
 @Component({
   selector: 'app-detalle-curso',
   templateUrl: './detalle-curso.page.html',
@@ -15,15 +15,9 @@ export class DetalleCursoPage implements OnInit {
   seccionCurso = '';
   qrDataURL: string = '';
 
-  alumnos = [
-    { rut: "1-1", nombre: "Diego Cares", estado: "ausente" },
-    { rut: "1-2", nombre: "Katherine Rubilar", estado: "presente" },
-    { rut: "1-3", nombre: "Adrian Rodriguez", estado: "presente" },
-    { rut: "1-4", nombre: "Maximiliano Toledo", estado: "ausente" },
-    { rut: "1-5", nombre: "Dieguito Maradona", estado: "presente" }
-  ];
+  alumnos : any[] = [];
 
-  constructor(private activaroute: ActivatedRoute, private router: Router) {
+  constructor(private consumoAPI: ConsumoapiService, private activaroute: ActivatedRoute, private router: Router) {
     this.activaroute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation()?.extras.state) {
         this.nombreCurso = this.router.getCurrentNavigation()?.extras.state?.['nombre'];
@@ -33,6 +27,13 @@ export class DetalleCursoPage implements OnInit {
       }
     });
   }
+//metodo para mostrar alumnos
+  mostrarAlumnos(){
+    this.consumoAPI.obtenerAlumnosPorCursoPorProfesor(1,3).subscribe((respuesta)=>{
+      this.alumnos = respuesta;
+    })
+  }
+
 
   generateQRCode() {
     if (this.idCurso) {
@@ -48,6 +49,7 @@ export class DetalleCursoPage implements OnInit {
 
   ngOnInit() {
     this.generateQRCode();
+    this.mostrarAlumnos();
   }
 
   isQRModalOpen = false;

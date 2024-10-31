@@ -8,20 +8,30 @@
   <ion-card class="center-card">
     <ion-header>
       <ion-toolbar>
-        <img [src]="qrDataURL" *ngIf="qrDataURL" class="qr-image">
+        <img [src]= "qrDataURL" *ngIf= "qrDataURL" class="qr-image">
         <ion-title>Curso: {{nombreCurso}}</ion-title>
         <ion-card-subtitle>ID Curso: {{idCurso}}</ion-card-subtitle>
       </ion-toolbar>
     </ion-header>
   </ion-card>
-  <ion-list>
-    <ion-item *ngFor="let alumno of alumnos">
-      <ion-label>
-        <h5>Rut: {{alumno.rut}}</h5>
-        <h5>Nombre: {{alumno.nombre}}</h5>
-        <h5>Estado: {{alumno.estado}}</h5>
-      </ion-label>
-      <div class="status-circle" [ngClass]="{'present': alumno.estado === 'presente', 'absent': alumno.estado === 'ausente'}"></div>
-    </ion-item>
-  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col><strong>RUT</strong></ion-col>
+      <ion-col><strong>Nombre</strong></ion-col>
+      <ion-col><strong>Estado</strong></ion-col>
+      <ion-col><strong>Prueba Circulo</strong></ion-col>
+    </ion-row>
+
+    <ion-row *ngFor= "let alumno of alumnos">
+      <ion-col>{{alumno.id}}</ion-col>
+      <ion-col>{{alumno.nombre}}</ion-col>
+      <ion-col>{{alumno.status}}</ion-col>
+      <ion-col>
+        <!-- Círculo de estado -->
+        <span [ngStyle]= "{'background-color': alumno.status === 1 ? 'green' : 'red'}" class="status-circle"></span>
+        {{alumno.estado}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
