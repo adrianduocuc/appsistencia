@@ -20,13 +20,11 @@
       <ion-col><strong>RUT</strong></ion-col>
       <ion-col><strong>Nombre</strong></ion-col>
       <ion-col><strong>Estado</strong></ion-col>
-      <ion-col><strong>Prueba Circulo</strong></ion-col>
     </ion-row>
 
     <ion-row *ngFor= "let alumno of alumnos">
       <ion-col>{{alumno.id}}</ion-col>
       <ion-col>{{alumno.nombre}}</ion-col>
-      <ion-col>{{alumno.status}}</ion-col>
       <ion-col>
         <!-- Círculo de estado -->
         <span [ngStyle]= "{'background-color': alumno.status === 1 ? 'green' : 'red'}" class="status-circle"></span>
