@@ -9,7 +9,7 @@ import { ConsumoapiService } from '../service/consumoapi.service';
 })
 export class DetalleCursoPage implements OnInit {
 
-  idCurso = '';
+  idCurso: number = 0;
   nombreCurso = '';
   codigoCurso = '';
   seccionCurso = '';
@@ -29,7 +29,7 @@ export class DetalleCursoPage implements OnInit {
   }
 //metodo para mostrar alumnos
   mostrarAlumnos(){
-    this.consumoAPI.obtenerAlumnosPorCursoPorProfesor(1,3).subscribe((respuesta)=>{
+    this.consumoAPI.obtenerAlumnosPorCursoPorProfesor(1,this.idCurso).subscribe((respuesta)=>{
       this.alumnos = respuesta;
     })
   }
