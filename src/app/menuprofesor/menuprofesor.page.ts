@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class MenuprofesorPage implements OnInit {
 
-  nombreUsuario: string = '';  //
+  nombreUsuario: string = '';
 
   constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();
