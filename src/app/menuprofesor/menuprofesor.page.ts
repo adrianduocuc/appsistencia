@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-menuprofesor',
-  templateUrl: './menuprofesor.page.html',
-  styleUrls: ['./menuprofesor.page.scss'],
+    selector: 'app-menuprofesor',
+    templateUrl: './menuprofesor.page.html',
+    styleUrls: ['./menuprofesor.page.scss'],
+    standalone: false
 })
 export class MenuprofesorPage implements OnInit {
 
@@ -13,7 +14,7 @@ export class MenuprofesorPage implements OnInit {
   constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras.state) {
-      this.nombreUsuario = navigation.extras.state['id'];
+      this.nombreUsuario = navigation.extras.state['nombre'];
       console.log('usuario:', this.nombreUsuario);
 
     }

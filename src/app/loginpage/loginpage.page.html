@@ -15,19 +15,23 @@
     <img id="user" src="assets/appsistencia-logo.png" class="logo-image">
   </ion-item>
 
-  <form [formGroup]="usuarioForm" (ngSubmit)="navegarExtras()">
+  <form [formGroup]="usuarioForm">
 
     <ion-item>
-      <ion-input label="User" labelPlacement="floating" placeholder="User" formControlName="user"></ion-input>
+      <ion-input label="{{textUser}}" labelPlacement="floating" placeholder="{{desUser}}" formControlName="user"></ion-input>
+
     </ion-item>
 
     <ion-item>
-      <ion-input type="password" label="Pass" labelPlacement="floating" placeholder="Pass" formControlName="pass"></ion-input>
+      <ion-input label="{{textPass}}" type="password" labelPlacement="floating" placeholder="{{desPass}}" formControlName="pass"></ion-input>
+
     </ion-item>
 
-    <ion-button class="custom-button" expand="block"  (click)="navegarExtras()" fill="solid">Entrar</ion-button>
+    <ion-button class="custom-button" expand="block" [disabled]="!usuarioForm.valid"  (click)="apiLogin()" fill="solid">{{ingresar}}</ion-button>
 
-
+    <ion-item>
+      <p>¿Olvidó su Contraseña?</p> <a [routerLink]="['/restablecer']" id="olvido">Restablecer</a>
+    </ion-item>
 
   </form>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders , HttpErrorResponse} from '@angular/common/http';
+import { HttpClient, HttpHeaders , HttpErrorResponse, HttpResponse} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { retry , catchError } from 'rxjs/operators';
 
@@ -14,6 +14,18 @@ export class ConsumoapiService {
     apiURL : string = 'http://localhost:5000/';
 
   constructor(private httpClient:HttpClient) { }
+
+  public login(usuario: string, password: string): Observable<HttpResponse<any>> {
+    const body = {
+      user: usuario,
+      password: password,
+    };
+
+    return this.httpClient.post<any>(this.apiURL + 'login', body, {
+      ...this.HttpOptions,
+      observe: 'response',
+    });
+  }
 
   public obtenerCursosPorProfesor(profesorId:number): Observable<any>{
     return this.httpClient.get(this.apiURL + '/profesores/'  + profesorId  + '/cursos', this.HttpOptions)

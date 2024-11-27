@@ -64,7 +64,7 @@ usuarios = [
         "user": "docente",
         "password": "password1",
         "nombre": "Juan Perez",
-        "perfil":  1,
+        "perfil": 1,
         "correo": "docente@gmail.com"
     },
     {
@@ -74,6 +74,30 @@ usuarios = [
         "nombre": "Luis Gonzalez",
         "perfil": 2,
         "correo": "alumno@gmail.com"
+    },
+    {
+        "id": 3,
+        "user": "docente2",
+        "password": "password3",
+        "nombre": "Maria Lopez",
+        "perfil": 1,
+        "correo": "maria.lopez@gmail.com"
+    },
+    {
+        "id": 4,
+        "user": "alumno2",
+        "password": "password4",
+        "nombre": "Carlos Martinez",
+        "perfil": 2,
+        "correo": "carlos.martinez@gmail.com"
+    },
+    {
+        "id": 5,
+        "user": "alumno3",
+        "password": "password5",
+        "nombre": "Ana Fernandez",
+        "perfil": 2,
+        "correo": "ana.fernandez@gmail.com"
     }
 ]
 
@@ -82,9 +106,9 @@ usuarios = [
 def login():
     username = request.json.get('user')
     password = request.json.get('password')
-    
+
     usuario = next((u for u in usuarios if u["user"] == username and u["password"] == password), None)
-    
+
     if usuario:
         return jsonify({
             "id": usuario["id"],
@@ -126,7 +150,7 @@ def registrar_asistencia():
     codigo = request.json.get('codigo')
     seccion = request.json.get('seccion')
     fecha = request.json.get('fecha')
-    
+
     # Aquí buscarías el curso y al alumno y actualizarías su estado.
     for profesor in profesores:
         for curso in profesor["cursos"]:
@@ -135,7 +159,7 @@ def registrar_asistencia():
                     if alumno["id"] == alumno_id:
                         alumno["status"] = 1  # 1 es para presente
                         return jsonify({"message": "Asistencia registrada"}), 200
-    
+
     return jsonify({"message": "No se pudo registrar la asistencia"}), 400
 
 
