@@ -14,7 +14,7 @@ import { AlertController } from '@ionic/angular';
     selector: 'app-loginpage',
     templateUrl: './loginpage.page.html',
     styleUrls: ['./loginpage.page.scss'],
-    standalone: false
+
 })
 export class LoginPage implements OnInit {
   @ViewChild(IonCard, { read: ElementRef }) card!: ElementRef<HTMLIonCardElement>;

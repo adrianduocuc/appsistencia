@@ -19,9 +19,7 @@ export class MenuprofesorPage implements OnInit {
 
     }
   }
-
   ngOnInit() {}
-
   goToPaginaPP() {
     this.router.navigate(['/pagina-pp']);
   }
