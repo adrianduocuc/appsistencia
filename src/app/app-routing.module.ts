@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: 'loginpage',
     loadChildren: () => import('./loginpage/loginpage.module').then( m => m.LoginpagePageModule),
-    
+
   },
   {
     path: '',
@@ -26,16 +26,6 @@ const routes: Routes = [
     canActivate: [ guardGuard ]
   },
 
-  {
-    path: 'qrcode',
-    loadChildren: () => import('./qrcode/qrcode.module').then( m => m.QrcodePageModule),
-    canActivate: [ guardGuard ]
-  },
-  {
-    path: 'escaneado',
-    loadChildren: () => import('./escaneado/escaneado.module').then( m => m.EscaneadoPageModule),
-    canActivate: [ guardGuard ]
-  },
   {
     path: 'detalle-curso',
     loadChildren: () => import('./detalle-curso/detalle-curso.module').then( m => m.DetalleCursoPageModule),
