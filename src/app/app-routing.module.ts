@@ -46,8 +46,6 @@ const routes: Routes = [
     loadChildren: () => import('./pageerror404/pageerror404.module').then( m => m.Pageerror404PageModule)
   },
 
-
-
 ];
 
 @NgModule({

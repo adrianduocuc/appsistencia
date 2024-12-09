@@ -19,10 +19,11 @@
       Asistencias
       <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
     </ion-button>
-
-    <ion-button expand="block" class="menu-button" >
+    
+    <ion-button expand="block" class="menu-button" (click)="openCamera()">
+      <img *ngIf="photo" [src]="photo" alt="Foto tomada" style="margin-top: 20px;" />
       <ion-icon slot="start" name="book-outline"></ion-icon>
-      Cursos
+      Escaneo de Asistencias
       <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
     </ion-button>
 
